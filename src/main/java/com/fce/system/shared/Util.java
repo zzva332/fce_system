@@ -8,7 +8,7 @@ public class Util {
 		Respuesta<T> respuesta = new Respuesta<T>();
 		respuesta.codigoError = 0;
 		if(codigoError != 0) respuesta.codigoError = codigoError;
-		respuesta.mensaje.add(mensaje);
+		if(mensaje != null) respuesta.mensaje.add(mensaje);
 		
 		respuesta.data = data;
 		
