@@ -20,7 +20,7 @@ public class ValidateObject {
 	}
 	public static List<String> validarCliente(Cliente request){
 		List<String> errors = new ArrayList<String>();
-		if(request.getNombre() == null || request.getNombre().isEmpty()) errors.add("propiedad nombre requerida");
+		if(request.getNombre() == null || request.getNombre().isBlank()) errors.add("propiedad nombre requerida");
 		if(request.getEmail() == null || request.getEmail().isBlank()) errors.add("propiedad email requerida");
 		
 		List<String> lista = Arrays.asList("CC","TI","CE");
