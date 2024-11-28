@@ -16,6 +16,7 @@ public class ClienteServiceImpl implements ClienteService  {
 	public Cliente getById(Long id) {
 		// TODO Auto-generated method stub
 		Optional<Cliente> item = productoRepo.findById(id);
+		// si no esta presente el valor devuelve null
 		if(!item.isPresent()) return null;
 		return item.get();
 	}
@@ -30,6 +31,7 @@ public class ClienteServiceImpl implements ClienteService  {
 	public Cliente update(Long id, Cliente request) {
 		// TODO Auto-generated method stub
 		Cliente item = getById(id);
+		// valida si existe el cliente a modificar
 		if(item == null) return null;
 		
 		item.setNombre(request.getNombre());

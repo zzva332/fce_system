@@ -8,6 +8,7 @@ import com.fce.system.clientes.Cliente;
 import com.fce.system.productos.Producto;
 
 public class ValidateObject {
+	// validacion del objeto producto para crear y actualizar
 	public static List<String> validarProducto(Producto request){
 		List<String> errors = new ArrayList<String>();
 		if(request.getCodigo() == null || request.getCodigo().isBlank()) errors.add("propiedad codigo requerida");
@@ -18,6 +19,7 @@ public class ValidateObject {
 		else if(request.getPrecio().doubleValue() <= 0) errors.add("propiedad precio debe ser mayor a 0");
 		return errors;
 	}
+	// validacion del objeto cliente para crear y actualizar
 	public static List<String> validarCliente(Cliente request){
 		List<String> errors = new ArrayList<String>();
 		if(request.getNombre() == null || request.getNombre().isBlank()) errors.add("propiedad nombre requerida");

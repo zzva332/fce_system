@@ -29,8 +29,8 @@ public class ClientesController {
 	}
 	@PostMapping()
 	public Respuesta<Cliente> create(@RequestBody Cliente request) {
-		//producto.id = null;
 		
+		// validar el objeto request a que cumpla con las validaciones
 		List<String> errors = ValidateObject.validarCliente(request);
 		if(errors.size() > 0) return Util.CrearRespuesta(errors);
 		
